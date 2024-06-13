@@ -35,7 +35,10 @@ export const meta: MetaFunction = () => {
 export async function loader({ context }: LoaderFunctionArgs) {
 	const { env } = context;
 
-	const valor = await env.GOOGLE_API_KEY.get("key-teste");
+	console.log(env);
+
+	// const valor = await env.GOOGLE_API_KEY.get("key-teste");
+	const valor = "oi";
 
   return json({
 		valor
