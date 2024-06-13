@@ -4,6 +4,7 @@ import {
 	type LoaderFunctionArgs,
 	type MetaFunction,
 } from '@remix-run/cloudflare';
+import { useLoaderData } from '@remix-run/react';
 // import * as React from 'react';
 // import {
 // 	Links,
@@ -31,8 +32,14 @@ export const meta: MetaFunction = () => {
 	];
 };
 
-export function loader({ context }: LoaderFunctionArgs) {
-  return json({});
+export async function loader({ context }: LoaderFunctionArgs) {
+	const { env } = context;
+
+	const valor = await env.GOOGLE_API_KEY.get("key-teste");
+
+  return json({
+		valor
+	});
 	// const menus: Menu[] = [
 	// 	{
 	// 		title: 'Docs',
@@ -68,7 +75,15 @@ export function loader({ context }: LoaderFunctionArgs) {
 }
 
 export default function App() {
-  return <h1> Hello World </h1>;
+	const { valor } = useLoaderData<typeof loader>();
+
+  return (
+		<div>
+			{valor}
+			<br />
+			Hello World !
+		</div>
+	);
   // const { menus } = useLoaderData<typeof loader>();
 
 	// return (
