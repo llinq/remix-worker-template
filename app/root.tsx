@@ -43,7 +43,8 @@ export async function loader({ context }: LoaderFunctionArgs) {
 
   return json({
 		valor,
-		env
+		env,
+		keyTeste,
 	});
 	// const menus: Menu[] = [
 	// 	{
@@ -80,11 +81,11 @@ export async function loader({ context }: LoaderFunctionArgs) {
 }
 
 export default function App() {
-	const { valor, env } = useLoaderData<typeof loader>();
+	const { keyTeste } = useLoaderData<typeof loader>();
 
   return (
 		<div>
-			{valor}
+			{keyTeste}
 			<br />
 			Hello World !!!!!!!
 		</div>
