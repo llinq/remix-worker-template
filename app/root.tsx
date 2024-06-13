@@ -41,7 +41,8 @@ export async function loader({ context }: LoaderFunctionArgs) {
 	const valor = "oi";
 
   return json({
-		valor
+		valor,
+		env
 	});
 	// const menus: Menu[] = [
 	// 	{
@@ -78,7 +79,9 @@ export async function loader({ context }: LoaderFunctionArgs) {
 }
 
 export default function App() {
-	const { valor } = useLoaderData<typeof loader>();
+	const { valor, env } = useLoaderData<typeof loader>();
+
+	console.log(env, valor);
 
   return (
 		<div>
