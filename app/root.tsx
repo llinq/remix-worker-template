@@ -30,51 +30,16 @@ export const meta: MetaFunction = () => {
 	];
 };
 
-export function loader({ context }: LoaderFunctionArgs) {
-	const menus: Menu[] = [
-		{
-			title: 'Docs',
-			links: [
-				{
-					title: 'Overview',
-					to: '/',
-				},
-			],
-		},
-		{
-			title: 'Useful links',
-			links: [
-				{
-					title: 'GitHub',
-					to: `https://github.com/${context.env.GITHUB_OWNER}/${context.env.GITHUB_REPO}`,
-				},
-				{
-					title: 'Remix docs',
-					to: 'https://remix.run/docs',
-				},
-				{
-					title: 'Cloudflare docs',
-					to: 'https://developers.cloudflare.com/pages',
-				},
-			],
-		},
-	];
-
-	return json({
-		menus,
-	});
-}
-
 export default function App() {
-	const { menus } = useLoaderData<typeof loader>();
+  return <h1>Hello World</h1>;
 
-	return (
-		<Document>
-			<Layout menus={menus}>
-				<Outlet />
-			</Layout>
-		</Document>
-	);
+	// return (
+	// 	<Document>
+	// 		<Layout menus={menus}>
+	// 			<Outlet />
+	// 		</Layout>
+	// 	</Document>
+	// );
 }
 
 function Document({
