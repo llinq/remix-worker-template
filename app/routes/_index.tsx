@@ -14,8 +14,8 @@ export const meta: MetaFunction = () => {
 export async function loader({
   context,
 }: LoaderFunctionArgs) {
-  const { template_kv } = context.cloudflare.env;
-  const value = await template_kv.get("key");
+  const { GOOGLE_API_KEY } = context.cloudflare.env;
+  const value = await GOOGLE_API_KEY.get("key");
 
   console.log(value);
 
