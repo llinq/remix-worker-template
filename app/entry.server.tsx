@@ -15,9 +15,6 @@ export default async function handleRequest(
   responseHeaders: Headers,
   remixContext: EntryContext,
 ) {
-  const cache = createEmotionCache();
-  const { extractCriticalToChunks } = createEmotionServer(cache);
-
   // const html = renderToString(
   //   <ServerStyleContext.Provider value={null}>
   //     <CacheProvider value={cache}>
@@ -44,11 +41,12 @@ export default async function handleRequest(
   // });
 
   const body = await renderToReadableStream(
-    <ServerStyleContext.Provider value={null}>
-      <CacheProvider value={cache}>
-        <RemixServer context={remixContext} url={request.url} />
-      </CacheProvider>
-    </ServerStyleContext.Provider>,
+    // <ServerStyleContext.Provider value={null}>
+    //   <CacheProvider value={cache}>
+    //     <RemixServer context={remixContext} url={request.url} />
+    //   </CacheProvider>
+    // </ServerStyleContext.Provider>,
+    <RemixServer context={remixContext} url={request.url} />,
     {
       signal: request.signal,
       onError(error: unknown) {
