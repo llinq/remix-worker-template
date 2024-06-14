@@ -15,6 +15,9 @@ export default async function handleRequest(
   responseHeaders: Headers,
   remixContext: EntryContext,
 ) {
+  const cache = createEmotionCache();
+  const { extractCriticalToChunks } = createEmotionServer(cache);
+
   // const html = renderToString(
   //   <ServerStyleContext.Provider value={null}>
   //     <CacheProvider value={cache}>
