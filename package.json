@@ -15,6 +15,18 @@
     "cf-typegen": "wrangler types"
   },
   "dependencies": {
+    "@chakra-ui/icons": "^2.1.1",
+    "@chakra-ui/react": "^2.8.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/server": "^11.11.0",
+    "@emotion/styled": "^11.11.5",
+    "chakra-dayzed-datepicker": "^0.3.0",
+    "date-fns": "^3.6.0",
+    "dayzed": "^3.2.3",
+    "framer-motion": "^6.5.1",
+    "moment": "^2.30.1",
+    "remix-client-cache": "^1.0.1",
+
     "@remix-run/cloudflare": "^2.9.2",
     "@remix-run/cloudflare-pages": "^2.9.2",
     "@remix-run/react": "^2.9.2",
