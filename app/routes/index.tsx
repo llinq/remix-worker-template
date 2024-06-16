@@ -14,5 +14,5 @@
 // }
 
 export default function Index() {
-  return <h1> Routes | Index</h1>;
+	return <h1> Routes | Index</h1>;
 }

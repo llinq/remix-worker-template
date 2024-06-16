@@ -1,5 +1,5 @@
 import {
-  json,
+	json,
 	type LinksFunction,
 	type LoaderFunctionArgs,
 	type MetaFunction,
@@ -35,13 +35,13 @@ export const meta: MetaFunction = () => {
 export async function loader({ context }: LoaderFunctionArgs) {
 	const { env } = context;
 
-	const keyTeste = await env.GOOGLE_API_KEY.get("key-teste");
+	const keyTeste = await env.GOOGLE_API_KEY.get('key-teste');
 	console.log(keyTeste);
 
 	// const valor = await env.GOOGLE_API_KEY.get("key-teste");
-	const valor = "oi";
+	const valor = 'oi';
 
-  return json({
+	return json({
 		valor,
 		env,
 		keyTeste,
@@ -83,14 +83,14 @@ export async function loader({ context }: LoaderFunctionArgs) {
 export default function App() {
 	const { keyTeste } = useLoaderData<typeof loader>();
 
-  return (
+	return (
 		<div>
 			{keyTeste}
 			<br />
 			Hello World !!!!!!!
 		</div>
 	);
-  // const { menus } = useLoaderData<typeof loader>();
+	// const { menus } = useLoaderData<typeof loader>();
 
 	// return (
 	// 	<Document>
@@ -126,7 +126,7 @@ export default function App() {
 // }
 
 export function ErrorBoundary() {
-  return <h2>Error!!</h2>;
+	return <h2>Error!!</h2>;
 	// const error = useRouteError();
 
 	// // Log the error to the console
